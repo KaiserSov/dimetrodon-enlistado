@@ -1,5 +1,10 @@
 package com.project.sofka.proyecto.controllers;
 
+/**
+ * Controlador de tareas
+ * @Author Sara Oquendo Valle
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
