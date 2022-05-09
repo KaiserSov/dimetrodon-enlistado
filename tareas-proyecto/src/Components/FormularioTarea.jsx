@@ -6,8 +6,8 @@ import { useRef } from 'react';
 const FormularioTarea = ( {_onSubmit} ) => {
     let form = useRef(); //limpiar campos
 
-    const onSubmit = (values) => {
-        onSubmit(values);
+    const _onSubmit = (values) => {
+        _onSubmit(values);
         form.reset();
     }
 
