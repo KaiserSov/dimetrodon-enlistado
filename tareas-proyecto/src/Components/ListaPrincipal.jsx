@@ -6,7 +6,7 @@ import { useRef } from 'react';
 const ListaPrincipal = ( {_onSubmit} ) => {
     let form = useRef(); //limpiar campos
 
-    const _onSubmit = (values) => {
+    const _onSubmitL = (values) => {
         _onSubmit(values);
         form.reset();
     }
@@ -15,7 +15,7 @@ const ListaPrincipal = ( {_onSubmit} ) => {
         <>
             <h3 className='mb-3'>Nueva Lista</h3>
 
-            <AvForm ref= {c => (form = c)} onValidSubmit={(_, values) => onSubmit (values)}>
+            <AvForm ref= {c => (form = c)} onValidSubmit={(_, values) => _onSubmitL (values)}>
                 <AvGroup className='mb-3'>
                     <AvField name="nombre" label="Nombre" required />
                 </AvGroup>

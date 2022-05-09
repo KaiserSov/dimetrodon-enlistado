@@ -6,7 +6,26 @@ import axios from 'axios';
 import FormularioTarea from "./Components/FormularioTarea";
 
 function App() {
-    const [tareas, setTareas] = useState([]);
+    const [listas, setListas] = useState([]);
+
+    const cargarLista = () =>{
+        axios.get('http://localhost:8080/tareas')
+        .then(({data}) => setListas(data))
+    }
+
+    useEffect(cargarLista, []);
+
+    const onSubmitL = (values) => {
+        axios.post("http://localhost:8080/tareas", values)
+        .then(() => cargarLista());
+    }
+
+    const eliminarLista = (tarea) => {
+        axios.delete("http://localhost:8080/tareas/${tarea.id}")
+        .then(() => cargarLista());
+    }
+
+
 
     const cargarTareas = () =>{
         axios.get('http://localhost:8080/tareas')
@@ -28,6 +47,18 @@ function App() {
     return (
         <>
         <Container>
+        <Row>
+                <Col md={6}>
+                  <ListaPrincipal 
+                  listas={listas}
+                  onDelete={eliminarTarea} />
+                </Col>
+                <Col md={6}>
+                  <ListaPrincipal onSubmitL={onSubmitL}/>
+                </Col>
+            </Row>
+
+        <Container>
             <Row>
                 <Col md={6}>
                   <ListaTareas 
@@ -38,6 +69,7 @@ function App() {
                   <FormularioTarea onSubmit={onSubmit}/>
                 </Col>
             </Row>
+        </Container>
         </Container>
         </>
     );
