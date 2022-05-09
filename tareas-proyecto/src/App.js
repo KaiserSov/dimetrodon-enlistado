@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Col, Row } from "reactstrap";
 import ListaTareas from "./Components/ListaTareas";
+import ListaPrincipal from "./Components/ListaPrincipal";
 import axios from 'axios';
 import FormularioTarea from "./Components/FormularioTarea";
 
