@@ -3,9 +3,18 @@ import { AvForm, AvField, AvInput, AvGroup } from 'availity-reactstrap-validatio
 import { Label, Button } from 'reactstrap';
 import { useRef } from 'react';
 
+/**
+ * Se encarga de la limpieza
+ * @param {*} param0 carga los valores
+ * @returns devuelve un formulario de listas
+ */
 const ListaPrincipal = ( {_onSubmit} ) => {
     let form = useRef(); //limpiar campos
 
+        /**
+     * resetear
+     * @param {*} values reasetea valores
+     */
     const _onSubmitL = (values) => {
         _onSubmit(values);
         form.reset();

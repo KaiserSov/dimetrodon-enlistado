@@ -2,6 +2,11 @@ import React from 'react'
 import { faCheckCircle, faEdit, faTrash, faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+/**
+ * Se encarga de crear las funciones de las tareas en la lista. Completar y eliminar tareas
+ * @param {*tareas, onDelete} tareas es para almacenar valores, onDelete es para eliminar valores en la lista
+ * @returns 
+ */
 const ListaTareas = ({tareas, onDelete}) => {
     return ( 
         <>
